@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app
+	xmlns="http://appengine.google.com/ns/1.0">
+
+	<threadsafe>true</threadsafe>
+	<sessions-enabled>false</sessions-enabled>
+	<runtime>java8</runtime>
+
+	<use-google-connector-j>true</use-google-connector-j>
+
+	<staging>
+		<enable-jar-classes>true</enable-jar-classes>
+	</staging>
+
+	<instance-class>B1</instance-class>
+	<manual-scaling>
+		<instances>5</instances>
+	</manual-scaling>
+
+
+	<env-variables>
+		<env-var name="CLOUD_SQL_INSTANCE_NAME"
+			value="school-30cc4:asia-south1:myinstance" />
+		<env-var name="DB_USER" value="root" />
+		<env-var name="DB_PASS" value="password" />
+		<env-var name="DB_NAME" value="rootschool" />
+	</env-variables>
+
+
+
+	<!-- <service>cloudsql</service> -->
+
+	<!-- 20Oct2018 with rootmindtech@gmail.com registration <system-properties> 
+		<property name="cloudsql" value="jdbc:google:mysql://maabadi-270cf:us-central1:myinstance/rootschool?user=root&amp;password=password" 
+		/> <property name="cloudsql-local" value="jdbc:mysql://google/rootschool?useSSL=false&amp;cloudSqlInstance=maabadi-270cf:us-central1:myinstance&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory&amp;user=root&amp;password=password" 
+		/> </system-properties> -->
+	<!-- 18Mar2019 with bannu.phani@gmail.com registration -->
+	<system-properties>
+		<property name="cloudsql"
+			value="jdbc:google:mysql://school-30cc4:asia-south1:myinstance/rootschool?user=root&amp;password=password" />
+		<property name="cloudsql-local"
+			value="jdbc:mysql://google/rootschool?useSSL=false&amp;cloudSqlInstance=school-30cc4:asia-south1:myinstance&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory&amp;user=root&amp;password=password" />
+
+	</system-properties>
+
+
+</appengine-web-app>
